@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=Oswald:wght@200;300;400;500&family=IM+Fell+English:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Oswald', sans-serif;
+  --font-editorial: 'IM Fell English', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #c0c0c0;
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a84c; }
+
+/* Selection */
+::selection { background: #8b0000; color: #e8e8e8; }
+
+/* Typography */
+.font-display { font-family: var(--font-display); }
+.font-heading { font-family: 'Bebas Neue', sans-serif; }
+.font-editorial { font-family: var(--font-editorial); }
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #c9a84c, #e8b84b, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smoke overlay */
+.smoke-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(139,0,0,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 20%, rgba(201,168,76,0.03) 0%, transparent 55%);
+  z-index: 0;
+}
+
+/* Curtain effect */
+.curtain-bg {
+  background: linear-gradient(180deg,
+    #1a0505 0%,
+    #0d0505 20%,
+    #0a0a0a 40%,
+    #0a0a0a 100%
+  );
+}
+
+/* Gold border */
+.border-gold { border-color: rgba(201, 168, 76, 0.3); }
+.border-gold-bright { border-color: rgba(201, 168, 76, 0.7); }
+
+/* Card hover */
+.book-card {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.book-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(201,168,76,0.05);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #8b0000, #6b0000);
+  color: #e8e8e8;
+  border: 1px solid rgba(201,168,76,0.3);
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #aa0000, #8b0000);
+  border-color: rgba(201,168,76,0.6);
+  box-shadow: 0 0 20px rgba(139,0,0,0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #c9a84c;
+  border: 1px solid rgba(201,168,76,0.4);
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.7);
+}
+
+/* Divider */
+.faire-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #444;
+}
+.faire-divider::before,
+.faire-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+}
+
+/* Spotlight glow */
+.spotlight-glow {
+  box-shadow: 0 0 40px rgba(201,168,76,0.15), 0 0 80px rgba(139,0,0,0.1);
+}
+
+/* Format badge */
+.format-badge {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+.format-digital { background: rgba(30,60,100,0.4); color: #6ab0f5; border: 1px solid rgba(100,170,255,0.2); }
+.format-physical { background: rgba(50,80,30,0.4); color: #8bc34a; border: 1px solid rgba(140,195,74,0.2); }
+.format-audio { background: rgba(100,40,80,0.4); color: #e091c0; border: 1px solid rgba(224,145,192,0.2); }
